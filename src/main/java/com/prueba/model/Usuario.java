@@ -16,11 +16,11 @@ public class Usuario {
     private String Activo;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "rol_id", referencedColumnName = "Id_rol")
-    private Rol rol;
+    @Column
+    private Integer rol_id;
 
     //Getters and Setters
+
     public Integer getId_usuario() {
         return Id_usuario;
     }
@@ -45,11 +45,11 @@ public class Usuario {
         Activo = activo;
     }
 
-    public Rol getRol() {
-        return rol;
+    public Integer getRol_id() {
+        return rol_id;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setRol_id(Integer rol_id) {
+        this.rol_id = rol_id;
     }
 }
