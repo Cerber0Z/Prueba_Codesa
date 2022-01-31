@@ -1,0 +1,32 @@
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="user.nombre" name="nombre" placeholder="nombre">
+                </div>
+                <br>
+                <div class="form-group">
+                    <select class="form-control" placeholder="activado" [(ngModel)]="user.activo" name="activo">
+                        <option value="true">Activado</option>
+                        <option value="false">Desactivado</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <select class="form-control" placeholder="Rol" [(ngModel)]="user.rol_id" name="rol">
+                        <option value="1">Administrador</option>
+                        <option value="2">Auditor</option>
+                        <option value="3">Auxiliar</option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="saveNewUser()" style="
+                width: 100%;
+                height: 50px;">
+                    SAVE
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

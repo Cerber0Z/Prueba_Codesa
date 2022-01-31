@@ -5,9 +5,12 @@ import com.prueba.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping("users")
 public class UsuarioRest {
 
@@ -24,6 +27,11 @@ public class UsuarioRest {
     @GetMapping("/listalluser")
     public List<Usuario> listAlluser(){
         return usuarioDAO.findAll();
+    }
+
+    @GetMapping("getuser/{ids}")
+    public List<Usuario> getuser(@PathVariable("ids") Integer ids){
+        return usuarioDAO.findAllById(Collections.singleton(ids));
     }
 
     @DeleteMapping("/deleteuser/{id}")
